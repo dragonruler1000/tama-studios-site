@@ -83,6 +83,99 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+:root{
+  --bg:#0b0c10;
+  --bg-alt:#11131a;
+  --text:#e7e9ee;
+  --muted:#b6bbc6;
+  --brand:#6cf;
+  --brand-ink:#002a3a;
+  --card:#151826;
+  --border:#24283a;
+  --max:1140px;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/******** Base ********/
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 800px at 80% -10%, #16203a 0%, rgba(22,32,58,0) 60%), var(--bg);
+  color:var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Noto Sans, "Apple Color Emoji","Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+img{max-width:100%; height:auto;}
+a{color:var(--brand); text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:var(--max); margin:0 auto; padding:0 20px}
+.section{padding:72px 0}
+.section.alt{background:var(--bg-alt)}
+.lead{font-size:1.125rem; color:var(--muted); max-width:60ch}
+
+/******** Header & Nav ********/
+.site-header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(120%) blur(6px); background:rgba(11,12,16,.6); border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 0}
+.logo{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--text)}
+.logo img{filter: drop-shadow(0 2px 8px rgba(108,204,255,.25))}
+.site-menu{display:flex; gap:18px; align-items:center}
+.site-menu a{color:var(--text); opacity:.9}
+.btn{display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:10px; color:var(--text); background:transparent}
+.btn.primary{background:var(--brand); color:var(--brand-ink); border-color:transparent; font-weight:700}
+.btn.primary:hover{filter:saturate(110%)}
+
+.nav-toggle{display:none; background:transparent; border:1px solid var(--border); color:var(--text); padding:8px 10px; border-radius:10px}
+@media (max-width: 800px){
+  .nav-toggle{display:inline-block}
+  .site-menu{position:absolute; right:20px; top:60px; background:var(--bg-alt); padding:12px; border:1px solid var(--border); border-radius:12px; box-shadow:var(--shadow); display:none; flex-direction:column; min-width:180px}
+  .site-menu.open{display:flex}
+}
+
+.skip-link{position:absolute; left:-9999px}
+.skip-link:focus{left:10px; top:10px; background:#000; color:#fff; padding:8px 10px; border-radius:8px; z-index:100}
+
+/******** Hero ********/
+.hero{padding:96px 0 72px}
+.hero h1{font-size:clamp(2rem, 3.2vw + 1rem, 3.2rem); line-height:1.1; margin:0 0 12px}
+.hero .cta{margin-top:20px; display:flex; gap:12px; flex-wrap:wrap}
+
+/******** Layouts ********/
+.two-col{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:start}
+@media (max-width: 900px){.two-col{grid-template-columns:1fr}}
+
+.grid{display:grid; gap:18px}
+.projects{grid-template-columns: repeat(3, 1fr)}
+.services{grid-template-columns: repeat(3, 1fr)}
+@media (max-width: 1000px){.projects, .services{grid-template-columns: repeat(2, 1fr)}}
+@media (max-width: 640px){.projects, .services{grid-template-columns: 1fr}}
+
+/******** Cards ********/
+.card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow: var(--shadow)}
+.card-media{height:160px; background:
+  linear-gradient(120deg, rgba(108,204,255,.25), rgba(108,204,255,.05) 60%),
+  radial-gradient(600px 200px at -10% 10%, rgba(108,204,255,.35), rgba(108,204,255,0) 60%),
+  #0f1322;
+}
+.card-body{padding:16px}
+.card h3{margin:0 0 4px}
+.card p{margin:0; color:var(--muted)}
+
+.about-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+.about-card h3{margin-top:0}
+.checklist{padding-left:18px}
+
+.service{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
+.service p{color:var(--muted)}
+
+.contact{text-align:center}
+
+/******** Footer ********/
+.site-footer{border-top:1px solid var(--border); background:var(--bg-alt)}
+.footer{display:flex; align-items:center; justify-content:space-between; gap:12px; padding:22px 0}
+.footer .social a{display:inline-flex; align-items:center; justify-content:center; width:32px; height:32px; border:1px solid var(--border); border-radius:8px; color:var(--muted)}
+.footer .social a:hover{color:var(--text)}
 
 /* ==========================================================================
    Helper classes
