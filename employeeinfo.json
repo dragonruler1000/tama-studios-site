@@ -50,18 +50,18 @@
     "pfp": "https://tamastudios.us/assets/sitewide/logo_plain.png",
     "role": "Modeller"
   },
-  "Evil Dan - ex employee": {
-    "id": "8",
-    "email": "alonsy_alonso@tamastudios.us",
-    "pfp": "https://tamastudios.us/assets/sitewide/logo_plain.png",
-    "role": "Modeller",
-    "color": "darkred"
-  },
   "The dvasia": {
     "id": "9",
     "email": "thedvasia@tamastudios.us",
     "pfp": "https://tamastudios.us/assets/sitewide/logo_plain.png",
     "role": "Modeller",
     "color": "red"
+  },
+  "Minecraftchest2": {
+    "id": "10",
+    "email": "minecraftchest2@tamastudios.us",
+    "pfp": "https://tamastudios.us/assets/sitewide/logo_plain.png",
+    "role": "Site Dev",
+    "color": "orange"
   }
 }

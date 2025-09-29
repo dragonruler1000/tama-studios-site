@@ -169,6 +169,9 @@ a:hover{text-decoration:underline}
 .service{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow)}
 .service p{color:var(--muted)}
 
+/* Employee avatar */
+.service .avatar{width:64px; height:64px; border-radius:50%; object-fit:cover; border:1px solid var(--border); box-shadow:var(--shadow); display:block; margin-bottom:12px; background:#0f1322}
+
 .contact{text-align:center}
 
 /******** Footer ********/

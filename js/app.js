@@ -59,12 +59,40 @@
         for(const [name, info] of entries){
           const div = document.createElement('div');
           div.className = 'service';
+          // Avatar
+          if (info.pfp){
+            const img = document.createElement('img');
+            img.className = 'avatar';
+            img.src = info.pfp;
+            img.alt = `${name} profile photo`;
+            img.loading = 'lazy';
+            img.width = 64; img.height = 64;
+            div.appendChild(img);
+          }
           const title = document.createElement('h3');
           const roles = buildRoles(info);
           title.textContent = roles ? `${name} — ${roles}` : name;
           const p = document.createElement('p');
-          // Simple fallback description
-          p.textContent = info.email ? `Contact: ${info.email}` : 'Team member at Tama Studios.';
+          // ID and email; make email a mailto link
+          const hasId = !!info.id;
+          const hasEmail = !!info.email;
+          if (hasId) {
+            p.appendChild(document.createTextNode(`ID: ${info.id}`));
+          }
+          if (hasId && hasEmail) {
+            p.appendChild(document.createTextNode(' • '));
+          }
+          if (hasEmail) {
+            p.appendChild(document.createTextNode('Contact: '));
+            const a = document.createElement('a');
+            a.href = `mailto:${info.email}`;
+            a.textContent = info.email;
+            a.setAttribute('aria-label', `Email ${name}`);
+            p.appendChild(a);
+          }
+          if (!hasId && !hasEmail) {
+            p.textContent = 'Team member at Tama Studios.';
+          }
           div.appendChild(title);
           div.appendChild(p);
           frag.appendChild(div);
